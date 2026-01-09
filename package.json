@@ -1,0 +1,38 @@
+{
+  "name": "cdv-ledenportaal",
+  "version": "0.1.0",
+  "main": "electron/main.js",
+  "build": {
+    "appId": "be.cdv.wervik.ledenportaal",
+    "productName": "CD&V Ledenportaal",
+    "directories": {
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "JOUW_GITHUB_GEBRUIKER",
+        "repo": "cdv-ledenportaal"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "electron": "electron .",
+    "build": "vite build",
+    "dist": "npm run build && electron-builder"
+  }
+}
